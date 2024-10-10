@@ -1,0 +1,94 @@
+{
+    "//": "基岩模型+版本号",
+    "plus_version":"0.0.1",
+    "format_version": "1.8.0",
+
+	"vars": [
+		"//变量输入",
+		{
+			"name": "this_is_bool",
+			"type": "bool",
+			"value": true
+		},
+		{
+			"name": "this_is_int",
+			"type": "int",
+			"value": 10
+		},
+		{
+			"name": "this_is_string",
+			"type": "string",
+			"value": "hello"
+		},
+		{
+			"//": "是否有必要区分但双精度？",
+			"name": "this_is_float",
+			"type": "float",
+			"value": 114.514
+		},
+		{
+			"//": "这是float向量",
+			"name": "this_is_vec3",
+			"type": "vec3",
+			"value": [1,2,3.33]
+		},
+		{
+			"//": "可以当作四元数使用",
+			"name": "this_is_vec4",
+			"type": "vec4",
+			"value": [1,2,3,4.44]
+		},
+		{
+			"//": "绑定为骨骼的坐标",
+			"name": "this_is_bone_pos",
+			"type": "bone_pos",
+			"value": "piston1"
+		},
+		{
+			"//": "绑定为骨骼的旋转",
+			"name": "this_is_bone_rot",
+			"type": "bone_rot",
+			"value": "piston1"
+		},
+		{
+			"//": "绑定为骨骼的坐标",
+			"name": "this_is_bone_scale",
+			"type": "bone_scale",
+			"value": "piston1"
+		}
+	],
+
+    "animations": {
+		"animation.model.new": {
+			"animation_length": 20,
+			"bones": {
+				"piston1": {
+					"//": "无时间父骨骼绑定。在动画播放期间，全程把df父骨骼设置为piston4",
+					"parent": "piston4"
+				},
+				"piston2": {
+					"//": "有时间父骨骼绑定。0至1.75（不含1.75）设置为poston1，1.75后设置为piston4",
+					"parent": {
+						"0": "piston4",
+						"1.75": "piston5"
+					}
+				},
+				"piston3": {
+					"//": "有时间父骨骼绑定。因为没有设置0的父骨骼，使用最接近0时间点的绑定，1.75前父骨骼设置为piston4，1.75后设置为poston5",
+					"parent": {
+						"0.75": "piston4",
+						"1.75": "piston5"
+					}
+				},
+				"piston4": {
+					"rotation": [47.5, 0, 0],
+					"scale": [1, 1.8, 1]
+				},
+				"piston5": {
+					"rotation": [47.5, 0, 0],
+					"scale": [1, 1.8, 1]
+				}
+			}
+		}
+	}
+}
