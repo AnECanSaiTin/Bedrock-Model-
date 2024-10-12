@@ -4,14 +4,22 @@
   "format_version": "1.12.0",
   "minecraft:geometry": [
     {
+      "//": "slots定义了一系列槽位，每个槽位需要绑定一个骨骼用于定位。plug定义了一个接口，需要绑定一个骨骼用于定位，并指定slot。",
       "slots": [
         {
           "name": "slot_a",
-          "bone": "piston1"
+          "bone": "piston1",
+          "predicates": [
+            {
+              "//": "谓词用于判断何时附加何种模型，未想好如何定义。当符合条件后，返回一个模型。",
+              "model": "a_model"
+            }
+          ]
         },
         {
           "name": "slot_b",
-          "bone": "piston2"
+          "bone": "piston2",
+          "//": "一个无谓词插槽，只能在代码中指定附加模型"
         }
       ],
       "plug": {
