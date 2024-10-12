@@ -54,19 +54,6 @@
       "name": "this_is_bone_scale",
       "type": "bone_scale",
       "value": "piston1"
-    },
-    {
-      "//": "将一个骨骼设定为slot",
-      "name": "this_is_slot1",
-      "type": "slot",
-      "value": "piston5"
-    },
-    {
-      "//": "将一个骨骼设定为plug，只能有一个。slot字段用于绑定其他模型的slot",
-      "name": "this_is_plug",
-      "type": "plug",
-      "value": "piston6",
-      "slot": "this_is_slot1"
     }
   ],
   "animations": {
